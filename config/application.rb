@@ -27,5 +27,10 @@ module Workspace
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    # config the generator
+    config.generators do |g| 
+      g.stylesheets  false
+    end
   end
 end
