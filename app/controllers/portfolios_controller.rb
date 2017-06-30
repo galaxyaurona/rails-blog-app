@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-    before_action :set_portfolio, only: [:edit, :delete, :show, :update]
+    before_action :set_portfolio, only: [:edit, :destroy, :show, :update]
     def index
         @portfolios = Portfolio.all
     end
@@ -42,6 +42,14 @@ class PortfoliosController < ApplicationController
                 format.json { render json: @portfolio.errors, status: :unprocessable_entity }
             end
         end
+    end
+    
+    def destroy
+        @portfolio.destroy
+        respond_to do |format|
+            format.html {redirect_to portfolios_path, notice: "delete record " }
+            format.json { render json: {success:true}}
+        end    
     end
     
     private
