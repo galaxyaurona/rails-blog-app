@@ -6,7 +6,7 @@
     <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? =%> </p>
     <!--<%= image_tag portfolio.main_image unless portfolio.thumb_image.nil? =%> </p>-->
     <h4> Id: <%= portfolio.id =%> </h4>
-    <h2> <%= link_to  portfolio.title ,portfolio_path(portfolio.id) =%> </h2>
+    <h2> <%= link_to  portfolio.title ,portfolio_show_path(portfolio.id) =%> </h2>
     <p> <%= portfolio.subtitle =%> </p>
     <p> <%= portfolio.body =%> </p>
 
